@@ -13,9 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ChurchWebsiteMaker.com | Done-for-you church websites",
+  title: "ChurchWebsiteMaker.com — Beautiful, Done-For-You Church Websites",
   description:
-    "Church website design, domain setup, logo creation, and maintenance for $49/month by TJ McCarty.",
+    "Get a professional church website with custom domain, logo, Google Maps listing, and ongoing maintenance — all for just $49/month. Built by TJ McCarty with 10+ years of experience.",
+  openGraph: {
+    title: "ChurchWebsiteMaker.com — Beautiful, Done-For-You Church Websites",
+    description:
+      "Professional church website design, domain setup, logo creation, and monthly maintenance for $49/month.",
+    type: "website",
+    url: "https://churchwebsitemaker.com",
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
