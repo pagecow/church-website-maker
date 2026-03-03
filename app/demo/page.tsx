@@ -66,8 +66,11 @@ export default function DemoIndexPage() {
                 className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-lg"
               >
                 <div
-                  className={`flex h-52 flex-col justify-end bg-gradient-to-br ${site.heroGradient} p-6`}
+                  className={`relative flex h-52 flex-col justify-end bg-gradient-to-br ${site.heroGradient} p-6`}
                 >
+                  <span className="absolute right-3 top-3 rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                    Demo
+                  </span>
                   <p className="text-xs font-medium uppercase tracking-wider text-white/50">
                     {site.denomination}
                   </p>
@@ -126,7 +129,7 @@ export default function DemoIndexPage() {
               href={`mailto:${TJ_CONTACT.email}`}
               className="flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg transition hover:shadow-xl"
             >
-              Get Your Church Online — $49/mo
+              Get Your Church Online — $79/mo
             </a>
           </div>
           <p className="mt-4 text-sm text-blue-200/50">

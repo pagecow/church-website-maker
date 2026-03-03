@@ -66,7 +66,7 @@ export const DEMO_NAV: Array<{ slug: DemoSectionSlug; label: string }> = [
 export const DEMO_SITES: DemoSite[] = [
   {
     slug: "grace-harbor-church",
-    name: "Grace Harbor Church",
+    name: "Grace Harbor Church (Demo)",
     denomination: "Non-Denominational",
     location: "Mobile, Alabama",
     heroGradient: "from-slate-900 via-blue-950 to-sky-900",
@@ -198,7 +198,7 @@ export const DEMO_SITES: DemoSite[] = [
   },
   {
     slug: "new-hope-baptist",
-    name: "New Hope Baptist Church",
+    name: "New Hope Baptist Church (Demo)",
     denomination: "Baptist",
     location: "Pensacola, Florida",
     heroGradient: "from-indigo-950 via-indigo-900 to-blue-800",
@@ -329,7 +329,7 @@ export const DEMO_SITES: DemoSite[] = [
   },
   {
     slug: "river-of-life-fellowship",
-    name: "River of Life Fellowship",
+    name: "River of Life Fellowship (Demo)",
     denomination: "Pentecostal",
     location: "Birmingham, Alabama",
     heroGradient: "from-emerald-950 via-teal-900 to-emerald-800",
@@ -460,7 +460,7 @@ export const DEMO_SITES: DemoSite[] = [
   },
   {
     slug: "st-matthews-community",
-    name: "St. Matthew's Community Church",
+    name: "St. Matthew's Community Church (Demo)",
     denomination: "Traditional / Mainline",
     location: "Savannah, Georgia",
     heroGradient: "from-violet-950 via-purple-900 to-indigo-800",
@@ -590,7 +590,7 @@ export const DEMO_SITES: DemoSite[] = [
   },
   {
     slug: "cornerstone-bible-church",
-    name: "Cornerstone Bible Church",
+    name: "Cornerstone Bible Church (Demo)",
     denomination: "Reformed / Presbyterian",
     location: "Hattiesburg, Mississippi",
     heroGradient: "from-stone-900 via-stone-800 to-amber-900",
@@ -721,7 +721,7 @@ export const DEMO_SITES: DemoSite[] = [
   },
   {
     slug: "cedar-grove-chapel",
-    name: "Cedar Grove Chapel",
+    name: "Cedar Grove Chapel (Demo)",
     denomination: "United Methodist",
     location: "Montgomery, Alabama",
     heroGradient: "from-blue-950 via-cyan-900 to-teal-800",

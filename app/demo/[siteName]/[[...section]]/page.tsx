@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -57,14 +58,14 @@ function ChurchHeader({
             href={getSectionHref(site.slug, "home")}
             className="flex items-center gap-3"
           >
-            <div
-              className="flex h-9 w-9 items-center justify-center rounded-lg"
+            <Image
+              src="/generic-church-logo.png"
+              alt={`${site.name} logo`}
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-lg"
               style={{ backgroundColor: site.accentColor }}
-            >
-              <span className="text-lg font-bold text-white">
-                {site.name.charAt(0)}
-              </span>
-            </div>
+            />
             <span className="text-lg font-bold tracking-tight text-slate-900 hidden sm:block">
               {site.name}
             </span>
@@ -100,14 +101,14 @@ function ChurchFooter({ site }: { site: DemoSite }) {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-3">
-              <div
-                className="flex h-10 w-10 items-center justify-center rounded-lg"
+              <Image
+                src="/generic-church-logo.png"
+                alt={`${site.name} logo`}
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-lg"
                 style={{ backgroundColor: site.accentColor }}
-              >
-                <span className="text-xl font-bold text-white">
-                  {site.name.charAt(0)}
-                </span>
-              </div>
+              />
               <span className="text-xl font-bold">{site.name}</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
@@ -168,7 +169,7 @@ function CTABanner() {
             Want a website like this for your church?
           </h3>
           <p className="mt-1 text-blue-100">
-            Done-for-you church websites — just $49/month. No tech skills needed.
+            Done-for-you church websites &amp; apps — just $79/month. No tech skills needed.
           </p>
         </div>
         <a
@@ -429,11 +430,59 @@ function HomeSection({ site }: { site: DemoSite }) {
         </div>
       </section>
 
-      {/* Mission/Vision */}
+      {/* Download Our App */}
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <p
+                className="text-sm font-semibold uppercase tracking-wider"
+                style={{ color: site.accentColor }}
+              >
+                Stay Connected
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Download Our Church App
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-slate-600">
+                Take {site.name.replace(" (Demo)", "")} with you everywhere. Watch sermons, submit prayer requests,
+                stay up to date on events, and connect with your church family — all from your phone.
+              </p>
+              <div className="mt-8 flex items-center gap-4">
+                <Image
+                  src="/download-app-on-apple.png"
+                  alt="Download on the App Store"
+                  width={140}
+                  height={42}
+                  className="h-11 w-auto"
+                />
+                <Image
+                  src="/download-app-on-google.png"
+                  alt="Get it on Google Play"
+                  width={140}
+                  height={42}
+                  className="h-11 w-auto"
+                />
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src="/download-our-app.png"
+                alt="Church app on multiple devices"
+                width={500}
+                height={380}
+                className="w-full max-w-md rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission/Vision */}
+      <section className="border-t border-slate-100 bg-slate-50 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-100 p-8 shadow-sm">
+            <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
               <div
                 className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl"
                 style={{ backgroundColor: site.accentColorLight }}
@@ -445,7 +494,7 @@ function HomeSection({ site }: { site: DemoSite }) {
                 {site.mission}
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-100 p-8 shadow-sm">
+            <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm">
               <div
                 className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl"
                 style={{ backgroundColor: site.accentColorLight }}
