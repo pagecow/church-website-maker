@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { DEMO_SITES, TJ_CONTACT } from "@/app/demo/sites";
 
@@ -7,6 +8,12 @@ const inclusions = [
     title: "Custom Church Website",
     description:
       "A beautiful, professionally designed website tailored to your church's unique identity and needs.",
+  },
+  {
+    icon: "📱",
+    title: "Custom Church App",
+    description:
+      "Your own church mobile app on the App Store and Google Play — powered by AppMyChurch.com. A $99/month value, included FREE.",
   },
   {
     icon: "🔗",
@@ -27,7 +34,7 @@ const inclusions = [
       "I'll get your church listed on Google Maps so local families can find you when they search.",
   },
   {
-    icon: "📱",
+    icon: "📲",
     title: "Mobile-Friendly Design",
     description:
       "Your site will look great on phones, tablets, and desktops — because most visitors browse on mobile.",
@@ -37,12 +44,6 @@ const inclusions = [
     title: "Ongoing Monthly Updates",
     description:
       "Need to update service times, add an event, or change a photo? Just email me and it's done.",
-  },
-  {
-    icon: "🖼️",
-    title: "Custom Graphics & Branding",
-    description:
-      "Preview images, social media graphics, and branding elements that match your church's style.",
   },
   {
     icon: "🤝",
@@ -57,38 +58,42 @@ const steps = [
     number: "01",
     title: "Reach Out",
     description:
-      "Send me an email or give me a call. Tell me about your church — the name, location, service times, and what you'd like on your website. That's all I need to get started.",
+      "Send me an email or give me a call. Tell me about your church — the name, location, service times, and what you'd like on your website and app. That's all I need to get started.",
   },
   {
     number: "02",
     title: "I Build Everything",
     description:
-      "I design your website, create your logo, set up your domain, and get your church listed on Google Maps. You'll get a preview before anything goes live.",
+      "I design your website, build your church app, create your logo, set up your domain, and get your church listed on Google Maps. You'll get a preview before anything goes live.",
   },
   {
     number: "03",
     title: "You Focus on Ministry",
     description:
-      "Once your site is live, I handle all the updates. Need to change service times or add an event? Just send me an email and I take care of it.",
+      "Once your site and app are live, I handle all the updates. Need to change service times or add a sermon? Just send me an email and I take care of it.",
   },
 ];
 
 const faqs = [
   {
     q: "Do I need to learn any software or technology?",
-    a: "Absolutely not. This is 100% done-for-you. I build the site, manage the hosting, and handle every update. All you need to do is email me when something needs to change.",
+    a: "Absolutely not. This is 100% done-for-you. I build the site, build the app, manage the hosting, and handle every update. All you need to do is email me when something needs to change.",
   },
   {
-    q: "What exactly does $49/month cover?",
-    a: "Everything: the initial website design and build, domain setup assistance, a custom logo, Google Maps listing, mobile-responsive design, hosting, and ongoing monthly content updates. There are no hidden fees.",
+    q: "What exactly does $79/month cover?",
+    a: "Everything: your church website, your own church mobile app (iOS & Android), domain setup assistance, a custom logo, Google Maps listing, mobile-responsive design, hosting, and ongoing monthly content updates. There are no hidden fees.",
   },
   {
-    q: "How fast can our website be ready?",
-    a: "Most churches have a fully designed, ready-to-review website within 3–5 business days. Once you approve it, we go live immediately.",
+    q: "What is the church app and what does it include?",
+    a: "Your church gets its own branded mobile app on the App Store and Google Play, powered by AppMyChurch.com. It includes sermon videos, prayer requests, event calendar, giving, and more. This normally costs $99/month on its own — but it's included FREE with your $79/month plan.",
+  },
+  {
+    q: "How fast can our website and app be ready?",
+    a: "Most churches have a fully designed, ready-to-review website within 3–5 business days. The church app typically follows within a week. Once you approve everything, we go live immediately.",
   },
   {
     q: "Who will I be working with?",
-    a: "You'll work directly with me — TJ McCarty. I have over 10 years of web design experience and I personally design, build, and maintain every church website.",
+    a: "You'll work directly with me — TJ McCarty. I have over 10 years of web design experience and I personally design, build, and maintain every church website and app.",
   },
   {
     q: "What if we already have a website?",
@@ -101,27 +106,6 @@ const faqs = [
   {
     q: "What kind of pages does a typical church website include?",
     a: "Most church websites include a Home page, About page, Sermons page, Events page, Statement of Beliefs, and a Contact page. I'll customize the pages to fit exactly what your church needs.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "We needed a website but had no idea where to start. TJ made it effortless. Our new site looks incredible and our members love it.",
-    author: "Pastor James Henderson",
-    church: "Living Word Fellowship",
-  },
-  {
-    quote:
-      "The best $49 our church spends every month. TJ responds quickly, the site looks professional, and we never have to worry about the technology.",
-    author: "Rev. Karen Phillips",
-    church: "Heritage Baptist Church",
-  },
-  {
-    quote:
-      "I was paying $200/month for a website builder I could barely use. TJ's service is a fraction of the cost and the result is 10x better.",
-    author: "Pastor David Nguyen",
-    church: "Grace Point Community",
   },
 ];
 
@@ -162,49 +146,81 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero with TJ Photo */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-900">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
         <div className="absolute right-0 top-0 h-[600px] w-[600px] -translate-y-1/4 translate-x-1/4 rounded-full bg-blue-500/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-[400px] w-[400px] translate-y-1/4 -translate-x-1/4 rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 lg:py-40">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
-              <span className="h-2 w-2 rounded-full bg-green-400" />
-              <span className="text-sm font-medium text-blue-200">
-                Now accepting new churches
-              </span>
+        <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28 lg:py-36">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
+                <span className="h-2 w-2 rounded-full bg-green-400" />
+                <span className="text-sm font-medium text-blue-200">
+                  Now accepting new churches
+                </span>
+              </div>
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                I&apos;ll Build Your Church Website{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  &amp; Mobile App
+                </span>
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-blue-100/80">
+                I&apos;ll build a website, register a domain, build a church app, and register your church on Google Maps for{" "}
+                <strong className="text-white">FREE</strong>. Just pay{" "}
+                <span className="font-bold text-white">$79/month</span>{" "}
+                for hosting and maintenance.
+              </p>
+              <p className="mt-3 text-sm text-blue-200/60">
+                The church app alone is a{" "}
+                <span className="line-through">$99/month</span> value — included{" "}
+                <strong className="text-blue-200">FREE</strong> with your plan.
+                Powered by{" "}
+                <a
+                  href="https://appmychurch.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-blue-400/50 hover:text-white"
+                >
+                  AppMyChurch.com
+                </a>
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={`mailto:${TJ_CONTACT.email}`}
+                  className="group flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-blue-500/25 transition hover:shadow-xl hover:shadow-blue-500/30"
+                >
+                  Get Your Church Online
+                  <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                </a>
+                <a
+                  href="#examples"
+                  className="flex items-center justify-center gap-2 rounded-xl border border-white/20 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/5"
+                >
+                  View Examples
+                </a>
+              </div>
+              <p className="mt-5 text-sm text-blue-200/50">
+                No contracts · Cancel anytime · Most sites live within 5 days
+              </p>
             </div>
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Your Church Deserves a{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                Beautiful Website
-              </span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-blue-100/80 md:text-xl">
-              I&apos;ll design, build, and maintain a professional church
-              website for you — including domain setup, logo, and Google Maps
-              listing. All for{" "}
-              <span className="font-semibold text-white">$49/month</span>.
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
-                href={`mailto:${TJ_CONTACT.email}`}
-                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-blue-500/25 transition hover:shadow-xl hover:shadow-blue-500/30 sm:w-auto"
-              >
-                Get Your Church Online
-                <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-              </a>
-              <a
-                href="#examples"
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/5 sm:w-auto"
-              >
-                View Examples
-              </a>
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-blue-500/20 to-indigo-500/20 blur-2xl" />
+                <Image
+                  src="/tj-photo-main.png"
+                  alt="TJ McCarty — Founder of ChurchWebsiteMaker.com"
+                  width={400}
+                  height={400}
+                  className="relative rounded-2xl"
+                  priority
+                />
+                <div className="absolute -bottom-4 -right-4 rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+                  TJ McCarty — 10+ Years Experience
+                </div>
+              </div>
             </div>
-            <p className="mt-6 text-sm text-blue-200/60">
-              No contracts · Cancel anytime · Most sites live within 5 days
-            </p>
           </div>
         </div>
       </section>
@@ -218,13 +234,13 @@ export default function Home() {
           </div>
           <div className="h-8 w-px bg-slate-200" />
           <div>
-            <p className="text-2xl font-bold text-slate-900">$49</p>
+            <p className="text-2xl font-bold text-slate-900">$79</p>
             <p className="text-sm text-slate-500">Per Month, All-In</p>
           </div>
           <div className="h-8 w-px bg-slate-200" />
           <div>
-            <p className="text-2xl font-bold text-slate-900">3–5 Days</p>
-            <p className="text-sm text-slate-500">Average Delivery</p>
+            <p className="text-2xl font-bold text-slate-900">Website + App</p>
+            <p className="text-sm text-slate-500">Both Included</p>
           </div>
           <div className="h-8 w-px bg-slate-200" />
           <div>
@@ -245,9 +261,9 @@ export default function Home() {
               One simple price. No surprises.
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              For <strong className="text-slate-900">$49/month</strong>, you get
-              a complete church website package — design, build, domain, logo,
-              and ongoing support.
+              For <strong className="text-slate-900">$79/month</strong>, you get
+              a complete church website, a custom church app, domain, logo,
+              and ongoing support. The church app alone is normally $99/month — it&apos;s included free.
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -269,10 +285,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Church App Section */}
+      <section className="border-y border-slate-100 bg-gradient-to-b from-blue-50 to-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid items-center gap-16 md:grid-cols-2">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <Image
+                  src="/app-my-church-logo.png"
+                  alt="AppMyChurch"
+                  width={180}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
+                  INCLUDED FREE
+                </span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Your Church Gets Its Own Mobile App
+              </h2>
+              <p className="mt-4 text-lg text-slate-600">
+                Every church that signs up gets a custom mobile app on the App Store and Google Play — powered by{" "}
+                <a
+                  href="https://appmychurch.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-blue-600 underline decoration-blue-300 hover:text-blue-700"
+                >
+                  AppMyChurch.com
+                </a>
+                . This is normally a <strong className="text-slate-900">$99/month</strong> service, but it&apos;s
+                included <strong className="text-slate-900">FREE</strong> with your $79/month plan.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {["Sermon videos & audio", "Prayer request wall", "Event calendar & notifications", "Online giving integration", "Push notifications to your congregation", "Your church branding & colors"].map((feature) => (
+                  <li key={feature} className="flex items-center gap-3 text-sm text-slate-700">
+                    <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex items-center gap-4">
+                <Image
+                  src="/download-app-on-apple.png"
+                  alt="Download on the App Store"
+                  width={140}
+                  height={42}
+                  className="h-11 w-auto"
+                />
+                <Image
+                  src="/download-app-on-google.png"
+                  alt="Get it on Google Play"
+                  width={140}
+                  height={42}
+                  className="h-11 w-auto"
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-4">
+              <Image
+                src="/app-screen-1.png"
+                alt="Church App - Home Screen"
+                width={220}
+                height={440}
+                className="w-44 rounded-2xl shadow-2xl md:w-52"
+              />
+              <Image
+                src="/app-screen-2.png"
+                alt="Church App - Prayer Requests"
+                width={220}
+                height={440}
+                className="w-44 -translate-y-6 rounded-2xl shadow-2xl md:w-52"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section
         id="how-it-works"
-        className="border-y border-slate-100 bg-gradient-to-b from-slate-50 to-white py-20 md:py-28"
+        className="bg-white py-20 md:py-28"
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -280,7 +374,7 @@ export default function Home() {
               How It Works
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Three simple steps to a beautiful church website
+              Three simple steps to a beautiful church website &amp; app
             </h2>
           </div>
           <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
@@ -301,6 +395,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ministry Photos */}
+      <section className="border-y border-slate-100 bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="overflow-hidden rounded-2xl">
+              <Image src="/pastor-preaching.jpg" alt="Pastor preaching" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
+            </div>
+            <div className="overflow-hidden rounded-2xl">
+              <Image src="/kids.jpg" alt="Kids ministry" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
+            </div>
+            <div className="overflow-hidden rounded-2xl">
+              <Image src="/small-groups.jpg" alt="Small groups" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
+            </div>
+            <div className="overflow-hidden rounded-2xl">
+              <Image src="/students.jpg" alt="Student ministry" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Demo Sites */}
       <section id="examples" className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
@@ -312,8 +426,8 @@ export default function Home() {
               See what your church website could look like
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              Browse these fully designed church websites. Each one includes
-              a Home, About, Sermons, Events, Beliefs, and Contact page.
+              Browse these demo church websites. Each one includes
+              a Home, About, Sermons, Events, Beliefs, and Contact page — plus a &ldquo;Download Our App&rdquo; section.
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -324,8 +438,11 @@ export default function Home() {
                 className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-lg"
               >
                 <div
-                  className={`flex h-48 flex-col justify-end bg-gradient-to-br ${site.heroGradient} p-6`}
+                  className={`relative flex h-48 flex-col justify-end bg-gradient-to-br ${site.heroGradient} p-6`}
                 >
+                  <span className="absolute right-3 top-3 rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                    Demo
+                  </span>
                   <p className="text-xs font-medium uppercase tracking-wider text-white/60">
                     {site.denomination}
                   </p>
@@ -341,7 +458,7 @@ export default function Home() {
                     &ldquo;{site.tagline}&rdquo;
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700">
-                    <span>Explore this site</span>
+                    <span>Explore this demo</span>
                     <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                   </div>
                 </div>
@@ -360,43 +477,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="border-y border-slate-100 bg-slate-50 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
-              Trusted by Churches
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Pastors love how easy this is
-            </h2>
-          </div>
-          <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div
-                key={t.author}
-                className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm"
-              >
-                <div className="flex gap-1 text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                  ))}
-                </div>
-                <p className="mt-4 text-base leading-relaxed text-slate-700">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="mt-6 border-t border-slate-100 pt-4">
-                  <p className="font-semibold text-slate-900">{t.author}</p>
-                  <p className="text-sm text-slate-500">{t.church}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About TJ */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="border-y border-slate-100 bg-slate-50 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
             <div>
@@ -413,6 +495,18 @@ export default function Home() {
                   churches get online is what I&apos;m most passionate about.
                 </p>
                 <p>
+                  I also created{" "}
+                  <a
+                    href="https://appmychurch.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-blue-600 underline decoration-blue-300 hover:text-blue-700"
+                  >
+                    AppMyChurch.com
+                  </a>
+                  , a platform that lets churches have their own mobile app. When you sign up for ChurchWebsiteMaker, I include your church app for free — a $99/month value.
+                </p>
+                <p>
                   I know most pastors and church leaders are incredibly busy.
                   The last thing you need is to spend hours wrestling with a
                   website builder or paying $200+/month for something that
@@ -422,7 +516,7 @@ export default function Home() {
                   That&apos;s why I created ChurchWebsiteMaker.com —{" "}
                   <strong>
                     a done-for-you service where I personally design, build,
-                    and maintain your church website
+                    and maintain your church website and app
                   </strong>{" "}
                   so you can focus on what matters most: your ministry.
                 </p>
@@ -435,6 +529,9 @@ export default function Home() {
                   <p className="text-3xl font-bold">TJ McCarty</p>
                   <p className="mt-1 text-blue-200">
                     Founder & Web Designer
+                  </p>
+                  <p className="mt-1 text-sm text-blue-300">
+                    Creator of AppMyChurch.com
                   </p>
                   <div className="mt-8 space-y-3 text-sm">
                     <p className="flex items-center gap-3">
@@ -464,7 +561,7 @@ export default function Home() {
       {/* FAQ */}
       <section
         id="faq"
-        className="border-y border-slate-100 bg-slate-50 py-20 md:py-28"
+        className="bg-white py-20 md:py-28"
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -498,9 +595,9 @@ export default function Home() {
               Ready to get your church online?
             </h2>
             <p className="mt-6 text-lg text-blue-100/80">
+              Website + church app + domain + logo + Google Maps listing — all for $79/month.
               Stop stressing about your website. Let me handle it so you can
-              focus on ministry. Email or call me today and we&apos;ll get
-              started.
+              focus on ministry.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
