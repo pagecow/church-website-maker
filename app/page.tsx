@@ -189,10 +189,10 @@ export default function Home() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
                   href={`mailto:${TJ_CONTACT.email}`}
-                  className="group flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg shadow-blue-500/25 transition hover:shadow-xl hover:shadow-blue-500/30"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-slate-900 shadow-lg transition hover:shadow-xl sm:w-auto"
                 >
-                  Get Your Church Online
-                  <svg className="h-4 w-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                  <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                  Email TJ to Get Started
                 </a>
                 <a
                   href="#examples"
@@ -395,32 +395,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ministry Photos */}
-      <section className="border-y border-slate-100 bg-slate-50 py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <div className="overflow-hidden rounded-2xl">
-              <Image src="/pastor-preaching.jpg" alt="Pastor preaching" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
-            </div>
-            <div className="overflow-hidden rounded-2xl">
-              <Image src="/kids.jpg" alt="Kids ministry" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
-            </div>
-            <div className="overflow-hidden rounded-2xl">
-              <Image src="/small-groups.jpg" alt="Small groups" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
-            </div>
-            <div className="overflow-hidden rounded-2xl">
-              <Image src="/students.jpg" alt="Student ministry" width={400} height={300} className="h-48 w-full object-cover md:h-56" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Demo Sites */}
       <section id="examples" className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
-              Live Examples
+              Church Website Examples
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               See what your church website could look like

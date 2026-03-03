@@ -11,6 +11,29 @@ import {
   getSectionHref,
 } from "@/app/demo/sites";
 
+const MINISTRY_ITEMS = [
+  {
+    imageSrc: "/pastor-preaching.jpg",
+    imageAlt: "Pastor preaching in the sanctuary",
+    title: "Worship",
+  },
+  {
+    imageSrc: "/kids.jpg",
+    imageAlt: "Kids ministry students",
+    title: "Kids",
+  },
+  {
+    imageSrc: "/small-groups.jpg",
+    imageAlt: "Adults in a small group",
+    title: "Small Groups",
+  },
+  {
+    imageSrc: "/students.jpg",
+    imageAlt: "Student ministry gathering",
+    title: "Students",
+  },
+];
+
 type DemoPageProps = {
   params: Promise<{
     siteName: string;
@@ -299,6 +322,47 @@ function HomeSection({ site }: { site: DemoSite }) {
                     )}
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Church Ministries */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <p
+              className="text-sm font-semibold uppercase tracking-wider"
+              style={{ color: site.accentColor }}
+            >
+              Church Ministries
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Find Your Place to Grow
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              From Sunday worship to kids and students, there&apos;s a place for every
+              season of life.
+            </p>
+          </div>
+          <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {MINISTRY_ITEMS.map((ministry) => (
+              <div
+                key={ministry.title}
+                className="group relative overflow-hidden rounded-2xl"
+              >
+                <Image
+                  src={ministry.imageSrc}
+                  alt={ministry.imageAlt}
+                  width={500}
+                  height={340}
+                  className="h-56 w-full object-cover transition duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
+                <p className="absolute bottom-4 left-4 text-xl font-bold uppercase tracking-wide text-white">
+                  {ministry.title}
+                </p>
               </div>
             ))}
           </div>
