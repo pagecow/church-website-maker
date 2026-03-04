@@ -161,9 +161,9 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                I&apos;ll Build Your Church Website and Mobile App{" "}
+                I&apos;ll Build Your Church Website &amp; Mobile App{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  FREE
+                  FREE!
                 </span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-blue-100/80">
@@ -204,7 +204,7 @@ export default function Home() {
               <p className="mt-5 text-sm text-blue-200/50">
                 tj@churchwebsitemaker.com
               </p>
-              <p className="mt-5 text-sm text-blue-200/50">
+              <p className="mt-2 ml-2 text-sm text-blue-200/50">
                 No contracts · Cancel anytime · Most sites live within 5 days
               </p>
             </div>
