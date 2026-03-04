@@ -201,10 +201,10 @@ export default function Home() {
                   View Examples
                 </a>
               </div>
-              <p className="mt-5 text-sm text-blue-200/50">
-                tj@churchwebsitemaker.com
+              <p className="ml-5 text-sm text-blue-200/50">
+                *TJ's email: tj@churchwebsitemaker.com
               </p>
-              <p className="mt-2 ml-2 text-sm text-blue-200/50">
+              <p className="mt-5 text-sm text-blue-200/50">
                 No contracts · Cancel anytime · Most sites live within 5 days
               </p>
             </div>
