@@ -161,16 +161,16 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                I&apos;ll Build Your Church Website{" "}
+                I&apos;ll Build Your Church Website and Mobile App{" "}
                 <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                  &amp; Mobile App
+                  FREE
                 </span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-blue-100/80">
                 I&apos;ll build a website, register a domain, build a church app, and register your church on Google Maps for{" "}
                 <strong className="text-white">FREE</strong>. Just pay{" "}
                 <span className="font-bold text-white">$79/month</span>{" "}
-                for hosting and maintenance.
+                for reliable hosting and maintenance.
               </p>
               <p className="mt-3 text-sm text-blue-200/60">
                 The church app alone is a{" "}
@@ -201,6 +201,9 @@ export default function Home() {
                   View Examples
                 </a>
               </div>
+              <p className="mt-5 text-sm text-blue-200/50">
+                tj@churchwebsitemaker.com
+              </p>
               <p className="mt-5 text-sm text-blue-200/50">
                 No contracts · Cancel anytime · Most sites live within 5 days
               </p>
