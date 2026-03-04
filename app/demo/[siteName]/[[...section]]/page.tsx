@@ -18,12 +18,12 @@ const MINISTRY_ITEMS = [
     title: "Worship",
   },
   {
-    imageSrc: "/kids.jpg",
+    imageSrc: "/kids.webp",
     imageAlt: "Kids ministry students",
     title: "Kids",
   },
   {
-    imageSrc: "/small-groups.jpg",
+    imageSrc: "/small-groups.png",
     imageAlt: "Adults in a small group",
     title: "Small Groups",
   },
