@@ -204,7 +204,7 @@ export default function Home() {
                 No contracts · Cancel anytime · Most sites live within 5 days
               </p>
               <p className="mt-5 text-sm text-blue-200/50">
-                Contact TJ:
+                TJ's Contact Info:
               </p>
               <p className="mt-1 text-sm text-blue-200/50">
                 tj@churchwebsitemaker.com · (251) 508-7250
