@@ -120,7 +120,7 @@ export default function Home() {
               <span className="text-lg font-bold text-white">C</span>
             </div>
             <span className="text-lg font-bold tracking-tight text-slate-900">
-              ChurchWebsiteMaker
+              Church Website Maker
             </span>
           </div>
           <nav className="hidden items-center gap-8 md:flex">
@@ -173,8 +173,7 @@ export default function Home() {
                 for reliable hosting and maintenance.
               </p>
               <p className="mt-3 text-sm text-blue-200/60">
-                The church app alone is a{" "}
-                <span className="line-through">$99/month</span> value — included{" "}
+                The church app alone is a $99/month value — included{" "}
                 <strong className="text-blue-200">FREE</strong> with your plan.
                 Powered by{" "}
                 <a
@@ -201,11 +200,14 @@ export default function Home() {
                   View Examples
                 </a>
               </div>
-              <p className="ml-5 text-sm text-blue-200/50">
-                *TJ's email: tj@churchwebsitemaker.com
-              </p>
               <p className="mt-5 text-sm text-blue-200/50">
                 No contracts · Cancel anytime · Most sites live within 5 days
+              </p>
+              <p className="mt-5 text-sm text-blue-200/50">
+                Contact TJ:
+              </p>
+              <p className="mt-1 text-sm text-blue-200/50">
+                tj@churchwebsitemaker.com · (251) 508-7250
               </p>
             </div>
             <div className="flex justify-center">
@@ -294,15 +296,8 @@ export default function Home() {
           <div className="grid items-center gap-16 md:grid-cols-2">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <Image
-                  src="/app-my-church-logo.png"
-                  alt="AppMyChurch"
-                  width={180}
-                  height={40}
-                  className="h-8 w-auto"
-                />
                 <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
-                  INCLUDED FREE
+                  APP INCLUDED FREE
                 </span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

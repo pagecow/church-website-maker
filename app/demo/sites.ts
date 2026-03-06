@@ -340,10 +340,10 @@ export const DEMO_SITES: DemoSite[] = [
     welcomeHeading: "Come Experience God's Presence",
     welcomeText:
       "River of Life Fellowship is a Spirit-filled church where passionate worship, bold prayer, and genuine community come together. No matter where you are in your journey, you'll find a place here. Come as you are — and leave transformed.",
-    pastor: "Angela Rivera",
+    pastor: "Andrew Rivera",
     pastorTitle: "Senior Pastor",
     about: [
-      "River of Life Fellowship was born out of a prayer meeting in 1996. Pastor Angela Rivera and her husband, Pastor Luis Rivera, felt called to plant a church that would be a spiritual home for people hungry for more of God's presence.",
+      "River of Life Fellowship was born out of a prayer meeting in 1996. Pastor Andrew Rivera and Pastor Luis Rivera felt called to plant a church that would be a spiritual home for people hungry for more of God's presence.",
       "What started in a living room with 12 people has become a dynamic congregation of over 600, with vibrant worship, active small groups, and a missions program that reaches four countries. Our church is known for its passionate worship, diverse community, and commitment to the power of prayer.",
       "We believe the Holy Spirit is active today — healing, delivering, empowering, and transforming. If you're looking for a church where God is free to move, we invite you to visit and experience His presence for yourself.",
     ],
@@ -406,7 +406,7 @@ export const DEMO_SITES: DemoSite[] = [
     sermons: [
       {
         title: "Rivers in the Desert",
-        speaker: "Pastor Angela Rivera",
+        speaker: "Pastor Andrew Rivera",
         date: "February 23, 2026",
         series: "Breakthrough Season",
         description:
@@ -422,7 +422,7 @@ export const DEMO_SITES: DemoSite[] = [
       },
       {
         title: "Walking by Faith, Not by Sight",
-        speaker: "Pastor Angela Rivera",
+        speaker: "Pastor Andrew Rivera",
         date: "February 9, 2026",
         description:
           "When God calls you to step out, the path doesn't always make sense. Learn how to trust Him when you can't see the outcome.",
@@ -552,7 +552,7 @@ export const DEMO_SITES: DemoSite[] = [
       },
       {
         title: "The God Who Sees",
-        speaker: "Associate Pastor Ellen Park",
+        speaker: "Associate Pastor Ethan Park",
         date: "February 9, 2026",
         description:
           "From Hagar in the wilderness to your struggles today, God sees you. He knows your name, your pain, and your future.",
@@ -732,11 +732,11 @@ export const DEMO_SITES: DemoSite[] = [
     welcomeHeading: "You Belong Here",
     welcomeText:
       "Cedar Grove Chapel is a caring church family where everyone has a place at the table. We come from different backgrounds but share one faith, one hope, and one calling — to love God and love our neighbors. We can't wait to meet you.",
-    pastor: "Sarah Mitchell",
+    pastor: "Samuel Mitchell",
     pastorTitle: "Reverend",
     about: [
       "Cedar Grove Chapel has been a part of the Montgomery community since 1952. Originally a small rural church on the outskirts of town, the city has grown around us — and so has our congregation and our mission.",
-      "Today, under the pastoral leadership of Rev. Sarah Mitchell, Cedar Grove Chapel is a thriving congregation of over 350 members with active children's, youth, and adult ministries. We're deeply involved in social justice initiatives, support a local after-school tutoring program, and maintain a free clothing closet for families in need.",
+      "Today, under the pastoral leadership of Rev. Samuel Mitchell, Cedar Grove Chapel is a thriving congregation of over 350 members with active children's, youth, and adult ministries. We're deeply involved in social justice initiatives, support a local after-school tutoring program, and maintain a free clothing closet for families in need.",
       "Our worship style blends traditional hymns with contemporary songs, and our sermons aim to connect timeless Scripture with the real-life challenges our members face every day. If you're looking for a church that's friendly, faithful, and forward-thinking, Cedar Grove is the place for you.",
     ],
     mission:
@@ -798,7 +798,7 @@ export const DEMO_SITES: DemoSite[] = [
     sermons: [
       {
         title: "Open Hearts, Open Hands",
-        speaker: "Rev. Sarah Mitchell",
+        speaker: "Rev. Samuel Mitchell",
         date: "February 23, 2026",
         series: "The Way of Love",
         description:
@@ -806,7 +806,7 @@ export const DEMO_SITES: DemoSite[] = [
       },
       {
         title: "The God of Second Chances",
-        speaker: "Rev. Sarah Mitchell",
+        speaker: "Rev. Samuel Mitchell",
         date: "February 16, 2026",
         series: "The Way of Love",
         description:

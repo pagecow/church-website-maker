@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
+  DEMO_SITES,
   DEMO_NAV,
   DemoSectionSlug,
   DemoSite,
@@ -33,6 +34,73 @@ const MINISTRY_ITEMS = [
     title: "Students",
   },
 ];
+
+const CHURCH_IMAGE_BY_SITE: Record<string, string> = {
+  "grace-harbor-church": "/church-4.jpg",
+  "new-hope-baptist": "/church-2.jpg",
+  "river-of-life-fellowship": "/church-3.jpg",
+  "st-matthews-community": "/church-1.jpeg",
+  "cornerstone-bible-church": "/church-5.jpg",
+  "cedar-grove-chapel": "/church-6.jpg",
+};
+
+const SERMON_ARTWORK = [
+  {
+    imageSrc: "/sermon-1.jpg",
+    imageAlt: "We Are the Church sermon series artwork",
+    title: "We Are the Church",
+    description:
+      "A message about the beauty of the local church and the calling to live as one body in Christ.",
+  },
+  {
+    imageSrc: "/sermon-2.jpg",
+    imageAlt: "Exodus sermon series artwork",
+    title: "Exodus",
+    description:
+      "A journey through God's rescue, redemption, and faithfulness as He leads His people from bondage into freedom.",
+  },
+  {
+    imageSrc: "/sermon-3.webp",
+    imageAlt: "The Gospel of Matthew sermon series artwork",
+    title: "The Gospel of Matthew",
+    description:
+      "Walking verse by verse through Matthew to see Jesus clearly and learn what faithful discipleship looks like.",
+  },
+  {
+    imageSrc: "/sermon-4.png",
+    imageAlt: "The Gospel sermon series artwork",
+    title: "The Gospel",
+    description:
+      "A clear look at the good news of Jesus Christ and how the Gospel changes hearts, homes, and everyday life.",
+  },
+  {
+    imageSrc: "/sermon-5.webp",
+    imageAlt: "Prayer Conversations with God sermon series artwork",
+    title: "Prayer",
+    series: "Conversations with God",
+    description:
+      "Learning how to talk with God honestly, consistently, and confidently through a life shaped by prayer.",
+  },
+  {
+    imageSrc: "/sermon-6.jpg",
+    imageAlt: "Genesis sermon series artwork",
+    title: "Genesis",
+    description:
+      "Exploring the foundations of creation, covenant, and God's purposes from the opening pages of Scripture.",
+  },
+];
+
+function getChurchImageSrc(siteSlug: string): string {
+  return CHURCH_IMAGE_BY_SITE[siteSlug] ?? "/church-1.jpeg";
+}
+
+function getSermonArtwork(siteSlug: string, sermonIndex: number) {
+  const siteIndex = DEMO_SITES.findIndex((site) => site.slug === siteSlug);
+  const normalizedSiteIndex = siteIndex === -1 ? 0 : siteIndex;
+  return SERMON_ARTWORK[
+    (normalizedSiteIndex + sermonIndex) % SERMON_ARTWORK.length
+  ];
+}
 
 type DemoPageProps = {
   params: Promise<{
@@ -219,30 +287,53 @@ function HomeSection({ site }: { site: DemoSite }) {
         <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-white/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-white/5 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-36 lg:py-44">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-white/50">
-              {site.denomination} · {site.location}
-            </p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              {site.tagline}
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-              {site.welcomeText.slice(0, 160)}...
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href={getSectionHref(site.slug, "contact")}
-                className="rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition hover:shadow-xl"
-                style={{ backgroundColor: site.accentColor }}
-              >
-                Plan Your Visit
-              </Link>
-              <Link
-                href={getSectionHref(site.slug, "about")}
-                className="rounded-xl border border-white/20 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/5"
-              >
-                Learn More
-              </Link>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-white/50">
+                {site.denomination} · {site.location}
+              </p>
+              <h1 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                {site.tagline}
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+                {site.welcomeText.slice(0, 160)}...
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href={getSectionHref(site.slug, "contact")}
+                  className="rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition hover:shadow-xl"
+                  style={{ backgroundColor: site.accentColor }}
+                >
+                  Plan Your Visit
+                </Link>
+                <Link
+                  href={getSectionHref(site.slug, "about")}
+                  className="rounded-xl border border-white/20 px-8 py-4 text-base font-semibold text-white transition hover:bg-white/5"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+            <div className="mx-auto w-full max-w-xl">
+              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-sm">
+                <Image
+                  src={getChurchImageSrc(site.slug)}
+                  alt={`${site.name} church building`}
+                  width={900}
+                  height={700}
+                  className="h-[320px] w-full object-cover sm:h-[420px]"
+                  priority
+                />
+                <div className="border-t border-white/10 bg-slate-950/40 px-6 py-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/60">
+                    Visit This Sunday
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-white">
+                    {site.name.replace(" (Demo)", "")}
+                  </p>
+                  <p className="mt-1 text-sm text-white/70">{site.location}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -393,32 +484,76 @@ function HomeSection({ site }: { site: DemoSite }) {
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
             </Link>
           </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {site.sermons.map((sermon) => (
-              <div
-                key={sermon.title}
-                className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:shadow-md"
-              >
-                <div
-                  className="mb-4 inline-block rounded-full px-3 py-1 text-xs font-semibold"
-                  style={{
-                    backgroundColor: site.accentColorLight,
-                    color: site.accentColorDark,
-                  }}
-                >
-                  {sermon.series || "Message"}
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.45fr_0.55fr]">
+            <div className="space-y-6">
+              {site.sermons.map((sermon, sermonIndex) => {
+                const artwork = getSermonArtwork(site.slug, sermonIndex);
+
+                return (
+                  <div
+                    key={`${sermon.title}-${artwork.title}`}
+                    className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-stretch">
+                      <div className="overflow-hidden md:w-80 md:self-stretch">
+                        <Image
+                          src={artwork.imageSrc}
+                          alt={artwork.imageAlt}
+                          width={520}
+                          height={340}
+                          className="h-52 w-full object-cover md:h-full"
+                        />
+                      </div>
+                      <div className="flex-1 p-6">
+                        <div
+                          className="mb-4 inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                          style={{
+                            backgroundColor: site.accentColorLight,
+                            color: site.accentColorDark,
+                          }}
+                        >
+                          {artwork.series || artwork.title}
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-900">
+                          {artwork.title}
+                        </h3>
+                        <p className="mt-1 text-sm text-slate-500">
+                          {sermon.speaker} · {sermon.date}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                          {artwork.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mx-auto flex w-full max-w-[260px] lg:h-full lg:max-w-[280px]">
+              <div className="flex w-full flex-col overflow-hidden rounded-4xl border border-slate-200 bg-slate-50 p-3 shadow-xl lg:h-full">
+                <div className="relative min-h-[320px] w-full flex-1">
+                  <Image
+                    src="/app-screen-3.png"
+                    alt={`${site.name} sermons screen in the church app`}
+                    fill
+                    sizes="(min-width: 1024px) 280px, 260px"
+                    className="rounded-3xl object-contain object-top"
+                  />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">
-                  {sermon.title}
-                </h3>
-                <p className="mt-1 text-sm text-slate-500">
-                  {sermon.speaker} · {sermon.date}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  {sermon.description}
-                </p>
+                <div className="px-2 pb-2 pt-3 text-center">
+                  <p
+                    className="text-sm font-semibold uppercase tracking-wider"
+                    style={{ color: site.accentColor }}
+                  >
+                    Watch in the App
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    Members can catch up on recent messages from the sermons screen
+                    in your church app.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
           <div className="mt-8 sm:hidden">
             <Link
@@ -695,45 +830,58 @@ function SermonsSection({ site }: { site: DemoSite }) {
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6">
           <div className="space-y-6">
-            {site.sermons.map((sermon) => (
-              <div
-                key={sermon.title}
-                className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition hover:shadow-md"
-              >
-                <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
-                  <div className="flex-1">
-                    {sermon.series && (
-                      <span
-                        className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold"
-                        style={{
-                          backgroundColor: site.accentColorLight,
-                          color: site.accentColorDark,
-                        }}
+            {site.sermons.map((sermon, sermonIndex) => {
+              const artwork = getSermonArtwork(site.slug, sermonIndex);
+
+              return (
+                <div
+                  key={`${sermon.title}-${artwork.title}`}
+                  className="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition hover:shadow-md"
+                >
+                  <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                    <div className="w-full shrink-0 md:w-72">
+                      <Image
+                        src={artwork.imageSrc}
+                        alt={artwork.imageAlt}
+                        width={520}
+                        height={340}
+                        className="h-48 w-full rounded-2xl object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      {(artwork.series || artwork.title) && (
+                        <span
+                          className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold"
+                          style={{
+                            backgroundColor: site.accentColorLight,
+                            color: site.accentColorDark,
+                          }}
+                        >
+                          {artwork.series || artwork.title}
+                        </span>
+                      )}
+                      <h3 className="text-xl font-bold text-slate-900">
+                        {artwork.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-slate-500">
+                        {sermon.speaker} · {sermon.date}
+                      </p>
+                      <p className="mt-4 text-base leading-relaxed text-slate-600">
+                        {artwork.description}
+                      </p>
+                    </div>
+                    <div className="shrink-0">
+                      <div
+                        className="flex h-16 w-16 items-center justify-center rounded-2xl"
+                        style={{ backgroundColor: site.accentColorLight }}
                       >
-                        {sermon.series}
-                      </span>
-                    )}
-                    <h3 className="text-xl font-bold text-slate-900">
-                      {sermon.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-500">
-                      {sermon.speaker} · {sermon.date}
-                    </p>
-                    <p className="mt-4 text-base leading-relaxed text-slate-600">
-                      {sermon.description}
-                    </p>
-                  </div>
-                  <div className="shrink-0">
-                    <div
-                      className="flex h-16 w-16 items-center justify-center rounded-2xl"
-                      style={{ backgroundColor: site.accentColorLight }}
-                    >
-                      <svg className="h-8 w-8" style={{ color: site.accentColor }} fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                        <svg className="h-8 w-8" style={{ color: site.accentColor }} fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
