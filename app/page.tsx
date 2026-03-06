@@ -606,7 +606,7 @@ export default function Home() {
                 <span className="text-sm font-bold text-white">C</span>
               </div>
               <span className="font-bold text-slate-900">
-                ChurchWebsiteMaker.com
+                Church Website Maker
               </span>
             </div>
             <p className="text-sm text-slate-500">
