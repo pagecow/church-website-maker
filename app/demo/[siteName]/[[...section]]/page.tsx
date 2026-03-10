@@ -161,7 +161,7 @@ function ChurchHeader({
               {site.name}
             </span>
           </Link>
-          <nav className="flex items-center gap-1">
+          <nav className="hidden items-center gap-1 md:flex">
             {DEMO_NAV.map((item) => {
               const active = item.slug === currentSection;
               return (
@@ -179,6 +179,44 @@ function ChurchHeader({
               );
             })}
           </nav>
+          <details className="relative md:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+              <span className="sr-only">Open menu</span>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </summary>
+            <div className="absolute right-0 top-full z-10 mt-2 w-56 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-lg">
+              <nav className="flex flex-col">
+                {DEMO_NAV.map((item) => {
+                  const active = item.slug === currentSection;
+                  return (
+                    <Link
+                      key={item.slug}
+                      href={getSectionHref(site.slug, item.slug)}
+                      className={`rounded-xl px-4 py-3 text-sm font-medium transition ${
+                        active
+                          ? "bg-slate-100 text-slate-900"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </div>
+          </details>
         </div>
       </div>
     </header>
@@ -1185,7 +1223,7 @@ export default async function DemoSitePage({ params }: DemoPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen overflow-x-hidden bg-white">
       <ChurchHeader site={site} currentSection={currentSection} />
       {sectionMap[currentSection]}
       <CTABanner />
