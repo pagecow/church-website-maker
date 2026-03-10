@@ -529,9 +529,18 @@ function HomeSection({ site }: { site: DemoSite }) {
                 );
               })}
             </div>
-            <div className="mx-auto flex w-full max-w-[260px] lg:h-full lg:max-w-[280px]">
+            <div className="mx-auto flex w-full sm:max-w-[260px] lg:h-full lg:max-w-[280px]">
               <div className="flex w-full flex-col overflow-hidden rounded-4xl border border-slate-200 bg-slate-50 p-3 shadow-xl lg:h-full">
-                <div className="relative min-h-[320px] w-full flex-1">
+                <div className="sm:hidden">
+                  <Image
+                    src="/app-screen-3.png"
+                    alt={`${site.name} sermons screen in the church app`}
+                    width={1290}
+                    height={2796}
+                    className="h-auto w-full rounded-3xl"
+                  />
+                </div>
+                <div className="relative hidden min-h-[320px] w-full flex-1 sm:block">
                   <Image
                     src="/app-screen-3.png"
                     alt={`${site.name} sermons screen in the church app`}
