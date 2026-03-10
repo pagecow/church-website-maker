@@ -520,7 +520,7 @@ export default function Home() {
                     </p>
                     <p className="flex items-center gap-3">
                       <svg className="h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" /></svg>
-                      <span>Mobile, Alabama</span>
+                      <span>Robertsdale, Alabama</span>
                     </p>
                   </div>
                 </div>
