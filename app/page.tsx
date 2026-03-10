@@ -137,9 +137,49 @@ export default function Home() {
               FAQ
             </a>
           </nav>
+          <details className="relative md:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+              <span className="sr-only">Open menu</span>
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.8}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </summary>
+            <div className="absolute right-0 top-full z-10 mt-2 w-56 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-lg">
+              <nav className="flex flex-col">
+                <a href="#how-it-works" className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                  How It Works
+                </a>
+                <a href="#examples" className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                  Examples
+                </a>
+                <a href="#pricing" className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                  Pricing
+                </a>
+                <a href="#faq" className="rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900">
+                  FAQ
+                </a>
+                <a
+                  href={`mailto:${TJ_CONTACT.email}`}
+                  className="mt-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                >
+                  Get Started
+                </a>
+              </nav>
+            </div>
+          </details>
           <a
             href={`mailto:${TJ_CONTACT.email}`}
-            className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700"
+            className="hidden rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 md:inline-flex"
           >
             Get Started
           </a>
