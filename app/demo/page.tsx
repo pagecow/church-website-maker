@@ -133,7 +133,7 @@ export default function DemoIndexPage() {
             </a>
           </div>
           <p className="mt-4 text-sm text-blue-200/50">
-            Contact TJ: {TJ_CONTACT.email} · {TJ_CONTACT.phone}
+            Contact TJ: {TJ_CONTACT.email}
           </p>
         </div>
       </section>

@@ -51,7 +51,6 @@ export type DemoSite = {
 
 export const TJ_CONTACT = {
   email: "tj@churchwebsitemaker.com",
-  phone: "251-508-7250",
 };
 
 export const DEMO_NAV: Array<{ slug: DemoSectionSlug; label: string }> = [
